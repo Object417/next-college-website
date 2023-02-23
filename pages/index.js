@@ -1,7 +1,8 @@
 import React from "react"
 import Head from "next/head"
+import Link from "next/link"
 
-export default function Home() {
+function Home() {
   return (
     <>
       <Head>
@@ -10,7 +11,9 @@ export default function Home() {
       </Head>
       <main>
         <h1>Hello, Next.js!</h1>
+        <Link href="/about">About</Link>
       </main>
     </>
   )
 }
+export default Home
