@@ -1,0 +1,17 @@
+@import "bootstrap/scss/bootstrap";
+
+.w-fit-content {
+  width: fit-content;
+}
+
+@include media-breakpoint-down(sm) {
+  .header-title {
+    display: none;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  #navbarSupportedContent {
+    order: 9;
+  }
+}
