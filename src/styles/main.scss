@@ -13,5 +13,100 @@
 @include media-breakpoint-down(lg) {
   #navbarSupportedContent {
     order: 9;
+
+    .nav-item {
+      text-align: center;
+    }
   }
+}
+@include media-breakpoint-up(md) {
+  #departments {
+    .input-group {
+      margin-left: auto;
+    }
+  }
+  .input-group {
+    max-width: 30rem;
+  }
+}
+
+.welcome-fs {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    width: fit-content;
+    background-color: rgba($color: #000, $alpha: 0.3);
+  }
+}
+
+.input-group {
+  // max-width: 30rem;
+}
+
+.bg-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+body > header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background-color: rgba($color: #000, $alpha: 0.3);
+
+  .nav-link {
+    color: #fff;
+  }
+}
+
+main > section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .section-title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
+.swiper-slide {
+  height: auto !important;
+
+  .card {
+    height: 100%;
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+
+      .card-text {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+.card-img-top {
+  width: 100%;
+  object-fit: cover;
+}
+
+.row .card {
+  // aspect-ratio: 1/1;
+
+  .card-img-top {
+    height: 100%;
+  }
+
+  height: 100%;
 }
