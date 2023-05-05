@@ -1,0 +1,16 @@
+@keyframes shakeX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(0.25rem);
+  }
+}
+
+.anim-shakeX {
+  animation-name: shakeX;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}

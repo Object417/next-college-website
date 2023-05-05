@@ -13,13 +13,27 @@ $font-family-sans-serif: "Roboto", "Noto Sans", system-ui, -apple-system,
 :root {
   --bs-primary-rgb: 253, 210, 4;
 }
+.nav-link {
+  --bs-nav-link-hover-color: rgba(var(--bs-primary-rgb), 1);
+}
 
 @import "bootstrap/scss/bootstrap";
+@import "./icons";
+@import "./header";
+@import "./animations";
 
-@include media-breakpoint-down(sm) {
-  .header-title {
-    display: none;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  & > main {
+    flex-grow: 1;
   }
+}
+
+.link-hover-primary:hover {
+  color: $primary !important;
 }
 
 @include media-breakpoint-down(lg) {
@@ -72,20 +86,6 @@ $font-family-sans-serif: "Roboto", "Noto Sans", system-ui, -apple-system,
   z-index: -1;
 }
 
-body > header {
-  transition: all 0.3s;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 5;
-  background-color: rgba($color: #000, $alpha: 0.3);
-
-  .nav-link {
-    color: #fff;
-  }
-}
-
 main > section {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -94,6 +94,10 @@ main > section {
     text-transform: uppercase;
     font-size: 2rem;
     font-weight: bold;
+  }
+
+  &:nth-child(2n) {
+    background-color: $gray-200;
   }
 }
 
@@ -169,42 +173,28 @@ main > section {
   --bs-navbar-color: rgba(255, 255, 255, 1);
   --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
 }
-body > header:has(.navbar-collapse.show) {
-  background-color: rgba(#000, 0.9);
-}
-
-.icon {
-  transition: all 0.3s;
-}
-
-#facebook-icon:hover {
-  color: #4267b2;
-}
-#twitter-icon:hover {
-  color: #00acee;
-}
-#instagram-icon:hover {
-  color: #d62976;
-}
-#youtube-icon:hover {
-  color: #c4302b;
-}
-#linkedin-icon:hover {
-  color: #0077b5;
-}
 
 @include media-breakpoint-up(lg) {
   body > footer .bg-primary .row {
     justify-content: space-between;
   }
+  body > footer .bg-dark .row {
+    justify-content: space-between;
+  }
 }
 @include media-breakpoint-down(lg) {
   body > footer .bg-primary .row {
-    // justify-content: center;
     text-align: center;
 
     .hstack {
       justify-content: center;
     }
   }
+  body > footer .bg-dark .row {
+    text-align: center;
+  }
+}
+
+#contactEnquiry {
+  max-height: 20 * $font-size-base * $line-height-base;
 }

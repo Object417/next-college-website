@@ -2,12 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <title>The Sheffield College</title>
+    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <meta name="author" content="Object417" />
   </head>
   <body>
-    <header class="text-white">
+    <!-- #header -->
+    <header class="text-white fixed-header">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <button
@@ -72,20 +75,23 @@
               class="form-control"
               placeholder="Courses, careers, interests, articles"
             />
-            <button class="btn btn-light" type="reset">
+            <button class="btn btn-light border" type="reset">
               <i class="fa-solid fa-xmark"></i>
             </button>
           </div>
           <div class="form-text text-white">
             Already know where you are going?
             <wbr />
-            <a href="" class="link-light fw-bold">Apply now!</a>
+            <a href="" class="link-light fw-bold link-hover-primary"
+              >Apply now!</a
+            >
           </div>
         </form>
       </div>
     </div>
 
     <main>
+      <!-- We offer section -->
       <section>
         <div class="container">
           <h3 class="section-title">We offer</h3>
@@ -95,7 +101,12 @@
             explore all the different routes in to one of our fantastic courses,
             or use the keyword search here.
           </p>
+          <p class="section-text d-sm-none">
+            Scroll
+            <i class="fa-solid fa-arrow-right anim-shakeX"></i>
+          </p>
 
+          <!-- Slider -->
           <div class="swiper courses-slider">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -107,7 +118,7 @@
                     <img
                       src="/imgs/apprenticeships.webp"
                       alt=""
-                      class="card-img-top"
+                      class="card-img"
                     />
                   </div>
                   <div class="card-body">
@@ -132,7 +143,7 @@
                     Offered at <strong>City Campus</strong>
                   </div>
                   <div class="ratio ratio-3x2">
-                    <img src="/imgs/courses.webp" alt="" class="card-img-top" />
+                    <img src="/imgs/courses.webp" alt="" class="card-img" />
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">Courses</h5>
@@ -154,11 +165,7 @@
                     Offered at <strong>City Campus</strong>
                   </div>
                   <div class="ratio ratio-3x2">
-                    <img
-                      src="/imgs/university.jpg"
-                      alt=""
-                      class="card-img-top"
-                    />
+                    <img src="/imgs/university.jpg" alt="" class="card-img" />
                   </div>
 
                   <div class="card-body">
@@ -182,7 +189,7 @@
                     Offered at <strong>City Campus</strong>
                   </div>
                   <div class="ratio ratio-3x2">
-                    <img src="/imgs/t-levels.jpg" alt="" class="card-img-top" />
+                    <img src="/imgs/t-levels.jpg" alt="" class="card-img" />
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">T-levels</h5>
@@ -205,11 +212,7 @@
                     Offered at <strong>City Campus</strong>
                   </div>
                   <div class="ratio ratio-3x2">
-                    <img
-                      src="/imgs/sixth-form.jpg"
-                      alt=""
-                      class="card-img-top"
-                    />
+                    <img src="/imgs/sixth-form.jpg" alt="" class="card-img" />
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">Sixth form</h5>
@@ -233,7 +236,7 @@
                     Offered at <strong>City Campus</strong>
                   </div>
                   <div class="ratio ratio-3x2">
-                    <img src="/imgs/adults.jpg" alt="" class="card-img-top" />
+                    <img src="/imgs/adults.jpg" alt="" class="card-img" />
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">Adult courses</h5>
@@ -268,19 +271,21 @@
             </div>
 
             <div class="col-md-6 col-12">
-              <div class="input-group">
-                <div class="input-group-text">
-                  <i class="fa-solid fa-magnifying-glass"></i>
+              <form action="" id="departments-search-form">
+                <div class="input-group">
+                  <div class="input-group-text">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Career, job, interests"
+                  />
+                  <button class="btn btn-light border" type="reset">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
                 </div>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Career, job, interests"
-                />
-                <button class="btn btn-secondary" type="reset">
-                  <i class="fa-solid fa-xmark"></i>
-                </button>
-              </div>
+              </form>
             </div>
           </div>
 
@@ -494,17 +499,17 @@
             <div class="col-12 col-md-8">
               <h3 class="section-title d-none d-md-block">Student feedback</h3>
               <div class="feedback-content">
-                <p>
+                <p class="section-text">
                   I’m so proud of the work being done to increase awareness
                   among staff and students of the importance of student mental
                   health and resilience.
                 </p>
-                <p>
+                <p class="section-text">
                   College has allowed me to focus on something I am passionate
                   about and helped me gain a better understanding of the art
                   industry.
                 </p>
-                <p>
+                <p class="section-text">
                   Coming to college has allowed me to develop more confidence to
                   help prepare me for my next step in life. College has allowed
                   me to focus on something I am passionate about and helped me
@@ -663,12 +668,66 @@
       </section>
     </main>
 
+    <!-- Page footer -->
     <footer>
       <div class="bg-dark">
-        <div class="container"></div>
+        <div class="container py-2">
+          <div class="row g-2">
+            <div class="col-12 col-lg-auto">
+              <ul class="list-unstyled">
+                <li>
+                  <a href="" class="link-light">Meet senior team</a>
+                </li>
+                <li>
+                  <a href="" class="link-light">Careers with us</a>
+                </li>
+                <li>
+                  <a href="./src/pages/contact-us.html" class="link-light"
+                    >Contact us</a
+                  >
+                </li>
+                <li>
+                  <a href="" class="link-light">Our awards</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-lg-auto">
+              <ul class="list-unstyled">
+                <li>
+                  <a href="" class="link-light">Public information</a>
+                </li>
+                <li>
+                  <a href="" class="link-light">Information for schools</a>
+                </li>
+                <li>
+                  <a href="" class="link-light">Information for employers</a>
+                </li>
+                <li>
+                  <a href="" class="link-light">Governance</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-lg-auto">
+              <ul class="list-unstyled">
+                <li>
+                  <a href="" class="link-light">Employer partnership</a>
+                </li>
+                <li>
+                  <a href="" class="link-light">Sport facilities</a>
+                </li>
+                <li>
+                  <a href="" class="link-light">Nurseries</a>
+                </li>
+                <li>
+                  <a href="" class="link-light">The Silver Plate restaurant</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="bg-primary">
-        <div class="container p-2">
+        <div class="container py-2">
           <div class="row align-items-center g-2">
             <div class="col-12 col-lg-auto">
               &copy; 2023 The Sheffield College

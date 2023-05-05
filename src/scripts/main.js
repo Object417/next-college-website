@@ -8,9 +8,35 @@ import { Tooltip } from "bootstrap/dist/js/bootstrap"
 
 import Swiper, { Navigation, Pagination } from "swiper"
 
+import { hideHeaderOnScroll } from "./header"
+
 // Disable form submit
 const $searchForm = document.getElementById("search-form")
-$searchForm.onsubmit = (e) => false
+if ($searchForm) {
+  $searchForm.onsubmit = (e) => false
+}
+
+const $departmentsSearchForm = document.getElementById(
+  "departments-search-form"
+)
+if ($departmentsSearchForm) {
+  $departmentsSearchForm.onsubmit = (e) => false
+}
+
+const $contactForm = document.getElementById("contact-form")
+if ($contactForm) {
+  $contactForm.onsubmit = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+
+    if (e.target.classList.contains("needs-validation")) {
+      e.target.classList.remove("needs-validation")
+      e.target.classList.add("was-validated")
+    }
+
+    console.log(e.target.checkValidity())
+  }
+}
 
 // Initialize Bootstrap tooltips
 const $tooltips = document.querySelectorAll("[data-bs-toggle=tooltip]")
@@ -28,7 +54,7 @@ const coursesSlider = new Swiper(".courses-slider", {
     nextEl: ".swiper-button-next",
     enabled: false
   },
-  slidesPerView: 1,
+  slidesPerView: 1.1,
   spaceBetween: 16,
   breakpoints: {
     576: {
@@ -47,3 +73,6 @@ const coursesSlider = new Swiper(".courses-slider", {
     }
   }
 })
+
+const $header = document.querySelector("body > header")
+hideHeaderOnScroll($header)
