@@ -4,7 +4,7 @@ import "@fortawesome/fontawesome-free/js/brands"
 import "@fortawesome/fontawesome-free/js/solid"
 import "@fortawesome/fontawesome-free/js/fontawesome"
 
-import { Tooltip } from "bootstrap/dist/js/bootstrap"
+import { Modal, Tooltip } from "bootstrap/dist/js/bootstrap"
 
 import Swiper, { Navigation, Pagination } from "swiper"
 
@@ -23,7 +23,10 @@ if ($departmentsSearchForm) {
   $departmentsSearchForm.onsubmit = (e) => false
 }
 
+const $formFeedbackModal = document.getElementById("formFeedbackModal")
+const bsFormFeedbackModal = new Modal($formFeedbackModal, {})
 const $contactForm = document.getElementById("contact-form")
+
 if ($contactForm) {
   $contactForm.onsubmit = (e) => {
     e.preventDefault()
@@ -34,7 +37,7 @@ if ($contactForm) {
       e.target.classList.add("was-validated")
     }
 
-    console.log(e.target.checkValidity())
+    bsFormFeedbackModal.show()
   }
 }
 
