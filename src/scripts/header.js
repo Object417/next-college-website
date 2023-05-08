@@ -1,7 +1,10 @@
 let lastYOffset = 0
 
 function hideHeaderOnScroll($header) {
-  if (!$header.classList.contains("fixed-header")) {
+  if (
+    !$header.classList.contains("fixed-header") &&
+    !$header.classList.contains("sticky-header")
+  ) {
     return
   }
 
