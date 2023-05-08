@@ -6,8 +6,11 @@ import "@fortawesome/fontawesome-free/js/fontawesome"
 
 import { Tooltip } from "bootstrap"
 import { hideHeaderOnScroll } from "./header"
+import prependBase from "./baseUrlWorkaround"
 
 console.info("main script loaded")
+
+prependBase()
 
 // Initialize Bootstrap tooltips
 const $tooltips = document.querySelectorAll("[data-bs-toggle=tooltip]")

@@ -16,6 +16,8 @@ if ($contactForm) {
       e.target.classList.add("was-validated")
     }
 
-    bsFormFeedbackModal.show()
+    if (e.target.checkValidity()) {
+      bsFormFeedbackModal.show()
+    }
   }
 }
