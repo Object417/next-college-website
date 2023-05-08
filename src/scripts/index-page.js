@@ -1,5 +1,7 @@
 import Swiper, { Navigation, Pagination } from "swiper"
 
+console.info("index page script loaded")
+
 // Disable form submit
 const $departmentsSearchForm = document.getElementById(
   "departments-search-form"

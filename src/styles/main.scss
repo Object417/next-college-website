@@ -52,8 +52,42 @@ body {
       margin-left: auto;
     }
   }
+
+  #courses-list {
+    .card:nth-child(2n + 1) .card-footer {
+      text-align: end;
+    }
+    .card:nth-child(2n) .card-img-wrapper {
+      order: 2;
+    }
+
+    .card:nth-child(2n + 1) .img-fluid {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+    .card:nth-child(2n) .img-fluid {
+      order: 2;
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+
   .input-group {
     max-width: 30rem;
+  }
+}
+@include media-breakpoint-down(md) {
+  #courses-list {
+    .card {
+      margin-bottom: $spacer;
+    }
+    .card-footer {
+      text-align: end;
+    }
+    .img-fluid {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
   }
 }
 
@@ -133,6 +167,13 @@ main > section {
 .ratio-3x2 {
   --bs-aspect-ratio: 66.66667%;
 }
+.ratio-2x1 {
+  --bs-aspect-ratio: 50%;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
 
 .avatar {
   height: $font-size-base * $line-height-base * 2;
@@ -144,7 +185,6 @@ main > section {
   display: flex;
   justify-content: center;
   align-items: center;
-  // border-radius: ;
 }
 
 #departments .card {
@@ -158,6 +198,12 @@ main > section {
     .card-img-top {
       transform: scale(1.2);
     }
+  }
+}
+
+#courses-list {
+  .card-header {
+    padding-bottom: 0;
   }
 }
 

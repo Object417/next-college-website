@@ -1,5 +1,7 @@
 import { Modal } from "bootstrap"
 
+console.info("contact us page script loaded")
+
 const $formFeedbackModal = document.getElementById("formFeedbackModal")
 const bsFormFeedbackModal = new Modal($formFeedbackModal, {})
 const $contactForm = document.getElementById("contact-form")
