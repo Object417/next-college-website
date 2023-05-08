@@ -21,6 +21,7 @@ $font-family-sans-serif: "Roboto", "Noto Sans", system-ui, -apple-system,
 @import "./icons";
 @import "./header";
 @import "./animations";
+@import "./parallax";
 
 body {
   display: flex;
@@ -51,6 +52,11 @@ body {
     .input-group {
       margin-left: auto;
     }
+  }
+
+  .course-main section:nth-child(2n) {
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
   }
 
   #courses-list {
@@ -239,4 +245,11 @@ main > section {
 
 #contactEnquiry {
   max-height: 20 * $font-size-base * $line-height-base;
+}
+
+#art-course-welcome-fs {
+  background-image: url("/imgs/art-3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
