@@ -11,9 +11,16 @@ import {
   DirectionalLight,
   PCFSoftShadowMap,
   PointLight,
-  Color
+  Color,
+  Group,
+  PlaneGeometry,
+  DoubleSide,
+  FrontSide,
+  Vector3,
+  Box3
 } from "three"
-import { OrbitControls } from "three/addons/controls/OrbitControls"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 
 const $3dCubeContainer = document.getElementById("3d-cube-container")
 
@@ -24,9 +31,9 @@ const camera = new PerspectiveCamera(
   $3dCubeContainer.getBoundingClientRect().width /
     $3dCubeContainer.getBoundingClientRect().height,
   1,
-  1000
+  100
 )
-camera.position.set(0, 0, 2)
+camera.position.set(0, 0, 8)
 
 const renderer = new WebGLRenderer({ antialias: true, alpha: true })
 renderer.setSize(
@@ -39,29 +46,49 @@ $3dCubeContainer.appendChild(renderer.domElement)
 
 const controls = new OrbitControls(camera, renderer.domElement)
 controls.autoRotate = true
-// controls.maxPolarAngle = Math.PI / 2
-// controls.minPolarAngle = Math.PI / 2
-controls.minDistance = 2
+controls.minDistance = 5
 controls.maxDistance = 20
 
-const geometry = new BoxGeometry(1, 1, 1)
-const material = new MeshPhongMaterial({ color: 0x666666 })
-material.specular = new Color(0xaaaaaa)
-const cube = new Mesh(geometry, material)
-scene.add(cube)
+const platform = new Mesh(
+  new PlaneGeometry(100, 100),
+  new MeshStandardMaterial({ color: 0xffffff, side: FrontSide })
+)
+
+platform.position.set(0, 0, 0)
+platform.rotation.x = (-90 * Math.PI) / 180
+platform.receiveShadow = true
+scene.add(platform)
+
+const gltfLoader = new GLTFLoader()
+gltfLoader.load("/objs/scene.glb", (obj) => {
+  obj.scene.traverse((node) => {
+    if (node.isMesh) {
+      node.castShadow = true
+    }
+  })
+
+  const box = new Box3().setFromObject(obj.scene)
+  const measure = new Vector3()
+
+  platform.position.set(0, box.getSize(measure).y / -2, 0)
+
+  scene.add(obj.scene)
+  animate()
+})
 
 const ambientLight = new AmbientLight(0xffffff, 0.5)
 scene.add(ambientLight)
 
-// const directionalLight = new DirectionalLight(0xffffff, 1)
-// directionalLight.position.set(5, 5, 5)
-// directionalLight.castShadow = true
-// scene.add(directionalLight)
-
+// 0d6efd #blue
+// dc3545 #red
 const pointLight = new PointLight(0xffffff, 1)
-pointLight.position.set(3, 5, 2)
+pointLight.position.set(9, 10, 4)
 pointLight.castShadow = true
 scene.add(pointLight)
+
+const lightHolder = new Group()
+lightHolder.add(pointLight)
+scene.add(lightHolder)
 
 function resizeCanvas() {
   const $canvas = renderer.domElement
@@ -83,10 +110,15 @@ function resizeCanvas() {
   }
 }
 
-animate()
 function animate() {
   requestAnimationFrame(animate)
+
+  resizeCanvas()
+
+  // makes light stay at the same point
+  // when the scene is rotated
+  lightHolder.quaternion.copy(camera.quaternion)
+
   renderer.render(scene, camera)
   controls.update()
-  resizeCanvas()
 }
