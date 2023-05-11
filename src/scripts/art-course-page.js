@@ -79,16 +79,23 @@ function objResolve(obj) {
 
 const alertToast = new Toast("#alertToast")
 
-try {
-  gltfLoader.load("/objs/scene.glb", objResolve)
-} catch {
-  try {
-    gltfLoader.load("/next-colege-website/objs/scene.glb", objResolve)
-  } catch {
-    // can't load cube model
-    alertToast.show()
+gltfLoader.load(
+  "/objs/scene.glb",
+  objResolve,
+  () => {},
+  () => {
+    // onError
+    gltfLoader.load(
+      "/next-college-website/objs/scene.glb",
+      objResolve,
+      () => {},
+      () => {
+        // onError
+        alertToast.show()
+      }
+    )
   }
-}
+)
 
 const ambientLight = new AmbientLight(0xffffff, 0.5)
 scene.add(ambientLight)

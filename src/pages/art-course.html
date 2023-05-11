@@ -226,17 +226,25 @@
       </div>
     </div>
 
-    <div class="toast" role="alert" id="alertToast" data-bs-delay="2000">
-      <div class="toast-header">
-        <i class="fa-solid fa-triangle-exclamation" class="text-danger"></i>
-        <strong class="me-auto">Error</strong>
-        <button type="button" class="btn" data-bd-dismiss="toast">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="toast-body">
-        Cannot load model from <code>/objs/scene.glb</code> neither from
-        <code>/next-college-website/objs/scene.glb</code>.
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+      <div
+        class="toast text-bg-danger text-white"
+        role="alert"
+        id="alertToast"
+        data-bs-autohide="false"
+      >
+        <div class="toast-header">
+          <i class="fa-solid fa-triangle-exclamation" class=""></i>&nbsp;
+          <strong class="me-auto">Error</strong>
+          <button type="button" class="btn" data-bs-dismiss="toast">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="toast-body">
+          Cannot load model from
+          <code class="text-body">/objs/scene.glb</code> neither from
+          <code class="text-body">/next-college-website/objs/scene.glb</code>.
+        </div>
       </div>
     </div>
 
