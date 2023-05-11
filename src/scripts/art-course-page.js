@@ -1,3 +1,4 @@
+import { Toast } from "bootstrap"
 import {
   PerspectiveCamera,
   Scene,
@@ -60,7 +61,7 @@ platform.receiveShadow = true
 scene.add(platform)
 
 const gltfLoader = new GLTFLoader()
-gltfLoader.load("/objs/scene.glb", (obj) => {
+function objResolve(obj) {
   obj.scene.traverse((node) => {
     if (node.isMesh) {
       node.castShadow = true
@@ -74,7 +75,20 @@ gltfLoader.load("/objs/scene.glb", (obj) => {
 
   scene.add(obj.scene)
   animate()
-})
+}
+
+const alertToast = new Toast("#alertToast")
+
+try {
+  gltfLoader.load("/objs/scene.glb", objResolve)
+} catch {
+  try {
+    gltfLoader.load("/next-colege-website/objs/scene.glb", objResolve)
+  } catch {
+    // can't load cube model
+    alertToast.show()
+  }
+}
 
 const ambientLight = new AmbientLight(0xffffff, 0.5)
 scene.add(ambientLight)
