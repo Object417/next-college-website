@@ -6,6 +6,9 @@
 
   Still doesn't work in Brave Browser Mobile
 
+- [x] Sticky header instantly hides when is expanded due to how
+      `position: sticky` affects the page height
+
 ## Improvements
 
 - [x] Change burger menu icon to "x" when the menu is open

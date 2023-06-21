@@ -21,3 +21,8 @@ if ($contactForm) {
     }
   }
 }
+
+const $header = document.querySelector("body > header")
+const $main = document.querySelector("body > main")
+
+$main.style.paddingTop = $header.getBoundingClientRect().height + "px"
