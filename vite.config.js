@@ -10,7 +10,6 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src/")
     }
   },
-  assetsInclude: ["src/objs/*"],
   build: {
     outDir: "dist",
     emptyOutDir: true,

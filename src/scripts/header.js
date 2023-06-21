@@ -38,4 +38,18 @@ function hideHeaderOnScroll($header) {
   }
 }
 
+const $navbarToggler = document.getElementById("navbar-toggler")
+$navbarToggler.onclick = (e) => {
+  const $navbarXmarkIcon = $navbarToggler.querySelector(".fa-xmark")
+  const $navbarBarsIcon = $navbarToggler.querySelector(".fa-bars")
+
+  if ($navbarToggler.getAttribute("aria-expanded") === "true") {
+    $navbarXmarkIcon.classList.remove("d-none")
+    $navbarBarsIcon.classList.add("d-none")
+  } else {
+    $navbarXmarkIcon.classList.add("d-none")
+    $navbarBarsIcon.classList.remove("d-none")
+  }
+}
+
 export { hideHeaderOnScroll }

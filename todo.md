@@ -8,7 +8,7 @@
 
 ## Improvements
 
-- [ ] Change burger menu icon to "x" when the menu is open
+- [x] Change burger menu icon to "x" when the menu is open
   - [ ] Animate the icon change
 - [ ] Close the burger menu (if it's open) when the header disappears while scrolling
 - [ ] Update the license
