@@ -1,13 +1,21 @@
 import path, { resolve } from "path"
 import { defineConfig } from "vite"
 import jsconfigPaths from "vite-jsconfig-paths"
+import license from "rollup-plugin-license"
 
 export default defineConfig({
   base: "/next-college-website/",
-  plugins: [jsconfigPaths()],
+  plugins: [
+    jsconfigPaths(),
+    license({
+      thirdParty: {
+        output: resolve(__dirname, "dist/assets/vendor.LICENSE.txt")
+      }
+    })
+  ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src/")
+      "@": resolve(__dirname, "src/")
     }
   },
   build: {
