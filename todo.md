@@ -15,3 +15,4 @@
   - [ ] Animate the icon change
 - [x] Close the burger menu (if it's open) when the header disappears while scrolling
 - [ ] Update the license
+- [x] Include vendors' licenses in the source code
