@@ -14,13 +14,6 @@ body > header {
 .fixed-header {
   position: fixed;
   background-color: rgba($color: $dark, $alpha: 0.3);
-}
-.sticky-header {
-  position: sticky;
-  background-color: $dark;
-}
-.fixed-header,
-.sticky-header {
   top: 0;
   left: 0;
   right: 0;

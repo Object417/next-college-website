@@ -33,6 +33,10 @@ body {
   }
 }
 
+.list-unstyled {
+  margin-bottom: 0;
+}
+
 .link-hover-primary:hover {
   color: $primary !important;
 }
@@ -221,27 +225,6 @@ main > section {
 .navbar-toggler {
   --bs-navbar-color: rgba(255, 255, 255, 1);
   --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
-}
-
-@include media-breakpoint-up(lg) {
-  body > footer .bg-primary .row {
-    justify-content: space-between;
-  }
-  body > footer .bg-dark .row {
-    justify-content: space-between;
-  }
-}
-@include media-breakpoint-down(lg) {
-  body > footer .bg-primary .row {
-    text-align: center;
-
-    .hstack {
-      justify-content: center;
-    }
-  }
-  body > footer .bg-dark .row {
-    text-align: center;
-  }
 }
 
 #contactEnquiry {
