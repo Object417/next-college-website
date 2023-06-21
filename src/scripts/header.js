@@ -9,7 +9,7 @@ function hideHeaderOnScroll($header) {
   }
 
   window.onscroll = () => {
-    const currentYOffset = window.pageYOffset
+    const currentYOffset = window.scrollY
 
     if (currentYOffset <= 100) {
       $header.classList.remove("scroll-up")
@@ -21,6 +21,11 @@ function hideHeaderOnScroll($header) {
     ) {
       $header.classList.remove("scroll-up")
       $header.classList.add("scroll-down")
+
+      // click the menu to close it when the user scrolls down
+      if ($navbarToggler.getAttribute("aria-expanded") === "true") {
+        $navbarToggler.click()
+      }
     } else if (
       currentYOffset < lastYOffset - 100 &&
       !$header.classList.contains("scroll-up")
