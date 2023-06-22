@@ -60,15 +60,21 @@
 
     <div class="welcome-fs">
       <video
-        autoplay
+        id="bg-video"
+        preload="metadata"
         playsinline
         muted
         loop
         class="bg-video"
-        poster="/imgs/bg-video-poster.png"
+        poster="src/imgs/bg-video-poster.png"
       >
-        <source src="/video.mp4" type="video/mp4" />
+        <source src="src/vids/sheffcol.mp4" type="video/mp4" />
       </video>
+
+      <div class="btn btn-light" id="video-play-pause">
+        <i class="fa-solid fa-play"></i>
+        <i class="fa-solid fa-pause d-none"></i>
+      </div>
 
       <div class="container text-center p-4">
         <h2 class="text-uppercase text-white fw-bold display-5">
@@ -125,7 +131,7 @@
                   </div>
                   <div class="ratio ratio-3x2">
                     <img
-                      src="/imgs/apprenticeships.webp"
+                      src="src/imgs/apprenticeships.webp"
                       alt=""
                       class="card-img"
                     />
@@ -152,7 +158,7 @@
                     Offered at <strong>City Campus</strong>
                   </div>
                   <div class="ratio ratio-3x2">
-                    <img src="/imgs/courses.webp" alt="" class="card-img" />
+                    <img src="src/imgs/courses.webp" alt="" class="card-img" />
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">Courses</h5>
@@ -174,7 +180,11 @@
                     Offered at <strong>City Campus</strong>
                   </div>
                   <div class="ratio ratio-3x2">
-                    <img src="/imgs/university.jpg" alt="" class="card-img" />
+                    <img
+                      src="src/imgs/university.jpg"
+                      alt=""
+                      class="card-img"
+                    />
                   </div>
 
                   <div class="card-body">
@@ -198,7 +208,7 @@
                     Offered at <strong>City Campus</strong>
                   </div>
                   <div class="ratio ratio-3x2">
-                    <img src="/imgs/t-levels.jpg" alt="" class="card-img" />
+                    <img src="src/imgs/t-levels.jpg" alt="" class="card-img" />
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">T-levels</h5>
@@ -221,7 +231,11 @@
                     Offered at <strong>City Campus</strong>
                   </div>
                   <div class="ratio ratio-3x2">
-                    <img src="/imgs/sixth-form.jpg" alt="" class="card-img" />
+                    <img
+                      src="src/imgs/sixth-form.jpg"
+                      alt=""
+                      class="card-img"
+                    />
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">Sixth form</h5>
@@ -245,7 +259,7 @@
                     Offered at <strong>City Campus</strong>
                   </div>
                   <div class="ratio ratio-3x2">
-                    <img src="/imgs/adults.jpg" alt="" class="card-img" />
+                    <img src="src/imgs/adults.jpg" alt="" class="card-img" />
                   </div>
                   <div class="card-body">
                     <h5 class="card-title">Adult courses</h5>
@@ -304,7 +318,7 @@
               <div class="card">
                 <div class="overflow-hidden">
                   <img
-                    src="/imgs/agriculture.jpg"
+                    src="src/imgs/agriculture.jpg"
                     alt=""
                     class="card-img-top object-fit-cover"
                     data-aspect-ratio="1x1"
@@ -323,7 +337,7 @@
               <div class="card">
                 <div class="overflow-hidden">
                   <img
-                    src="/imgs/art.jpg"
+                    src="src/imgs/art.jpg"
                     alt=""
                     class="card-img-top"
                     data-aspect-ratio="1x1"
@@ -340,7 +354,7 @@
               <div class="card">
                 <div class="overflow-hidden">
                   <img
-                    src="/imgs/business.avif"
+                    src="src/imgs/business.avif"
                     alt=""
                     class="card-img-top"
                     data-aspect-ratio="1x1"
@@ -357,7 +371,7 @@
               <div class="card">
                 <div class="overflow-hidden">
                   <img
-                    src="/imgs/construction.jpg"
+                    src="src/imgs/construction.jpg"
                     alt=""
                     class="card-img-top"
                     data-aspect-ratio="1x1"
@@ -376,7 +390,7 @@
               <div class="card">
                 <div class="overflow-hidden">
                   <img
-                    src="/imgs/training.jpg"
+                    src="src/imgs/training.jpg"
                     alt=""
                     class="card-img-top"
                     data-aspect-ratio="1x1"
@@ -393,7 +407,7 @@
               <div class="card">
                 <div class="overflow-hidden">
                   <img
-                    src="/imgs/health.jpg"
+                    src="src/imgs/health.jpg"
                     alt=""
                     class="card-img-top"
                     data-aspect-ratio="1x1"
@@ -410,7 +424,7 @@
               <div class="card">
                 <div class="overflow-hidden">
                   <img
-                    src="/imgs/it.jpg"
+                    src="src/imgs/it.jpg"
                     alt=""
                     class="card-img-top"
                     data-aspect-ratio="1x1"
@@ -427,7 +441,7 @@
               <div class="card">
                 <div class="overflow-hidden">
                   <img
-                    src="/imgs/manufacturing.jpg"
+                    src="src/imgs/manufacturing.jpg"
                     alt=""
                     class="card-img-top"
                     data-aspect-ratio="1x1"
@@ -444,7 +458,7 @@
               <div class="card">
                 <div class="overflow-hidden">
                   <img
-                    src="/imgs/sales.jpg"
+                    src="src/imgs/sales.jpg"
                     alt=""
                     class="card-img-top"
                     data-aspect-ratio="1x1"
@@ -461,7 +475,7 @@
               <div class="card">
                 <div class="overflow-hidden">
                   <img
-                    src="/imgs/science.jpg"
+                    src="src/imgs/science.jpg"
                     alt=""
                     class="card-img-top"
                     data-aspect-ratio="1x1"
@@ -480,7 +494,7 @@
               <div class="card">
                 <div class="overflow-hidden">
                   <img
-                    src="/imgs/warehousing.jpg"
+                    src="src/imgs/warehousing.jpg"
                     alt=""
                     class="card-img-top"
                     data-aspect-ratio="1x1"
@@ -503,7 +517,11 @@
 
           <div class="row">
             <div class="col-12 col-md-4">
-              <img src="/imgs/student-feedback.png" alt="" class="img-fluid" />
+              <img
+                src="src/imgs/student-feedback.png"
+                alt=""
+                class="img-fluid"
+              />
             </div>
             <div class="col-12 col-md-8">
               <h3 class="section-title d-none d-md-block">Student feedback</h3>
@@ -558,7 +576,11 @@
                 </div>
 
                 <div class="ratio ratio-3x2">
-                  <img src="/imgs/college-vs-uni.jpg" alt="" class="card-img" />
+                  <img
+                    src="src/imgs/college-vs-uni.jpg"
+                    alt=""
+                    class="card-img"
+                  />
                 </div>
 
                 <div class="card-body">
@@ -598,7 +620,11 @@
                 </div>
 
                 <div class="ratio ratio-3x2">
-                  <img src="/imgs/blue-stockings.jpg" alt="" class="card-img" />
+                  <img
+                    src="src/imgs/blue-stockings.jpg"
+                    alt=""
+                    class="card-img"
+                  />
                 </div>
 
                 <div class="card-body">
@@ -639,7 +665,7 @@
                 </div>
 
                 <div class="ratio ratio-3x2">
-                  <img src="/imgs/maths.png" alt="" class="card-img" />
+                  <img src="src/imgs/maths.png" alt="" class="card-img" />
                 </div>
 
                 <div class="card-body">

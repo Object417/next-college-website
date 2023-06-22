@@ -23,6 +23,8 @@ import {
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 
+import cubeUrl from "@/objs/portal-cube.glb?url"
+
 const $3dCubeContainer = document.getElementById("3d-cube-container")
 
 const scene = new Scene()
@@ -80,20 +82,12 @@ function objResolve(obj) {
 const alertToast = new Toast("#alertToast")
 
 gltfLoader.load(
-  "/objs/scene.glb",
+  cubeUrl,
   objResolve,
   () => {},
   () => {
     // onError
-    gltfLoader.load(
-      "/next-college-website/objs/scene.glb",
-      objResolve,
-      () => {},
-      () => {
-        // onError
-        alertToast.show()
-      }
-    )
+    alertToast.show()
   }
 )
 
