@@ -232,8 +232,14 @@ main > section {
 }
 
 #art-course-welcome-fs {
-  background-image: url("/imgs/art-3.jpg");
+  background-image: url("../imgs/art-3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+#video-play-pause {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
 }

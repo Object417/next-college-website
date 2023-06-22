@@ -44,3 +44,19 @@ const coursesSlider = new Swiper(".courses-slider", {
     }
   }
 })
+
+// Enable video controls
+const $bgVideo = document.getElementById("bg-video")
+const $videoPlayPause = document.getElementById("video-play-pause")
+
+$videoPlayPause.onclick = (e) => {
+  if ($bgVideo.paused) {
+    $bgVideo.play()
+    $videoPlayPause.querySelector(".fa-play").classList.add("d-none")
+    $videoPlayPause.querySelector(".fa-pause").classList.remove("d-none")
+  } else {
+    $bgVideo.pause()
+    $videoPlayPause.querySelector(".fa-play").classList.remove("d-none")
+    $videoPlayPause.querySelector(".fa-pause").classList.add("d-none")
+  }
+}
