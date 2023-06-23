@@ -3,25 +3,18 @@ import {
   PerspectiveCamera,
   Scene,
   WebGLRenderer,
-  BoxGeometry,
   Mesh,
-  MeshBasicMaterial,
   MeshStandardMaterial,
-  MeshPhongMaterial,
   AmbientLight,
-  DirectionalLight,
   PCFSoftShadowMap,
   PointLight,
-  Color,
   Group,
   PlaneGeometry,
-  DoubleSide,
   FrontSide,
   Vector3,
   Box3
 } from "three"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 
 import cubeUrl from "@/objs/portal-cube.glb?url"
 
@@ -53,7 +46,7 @@ controls.minDistance = 5
 controls.maxDistance = 20
 
 const platform = new Mesh(
-  new PlaneGeometry(100, 100),
+  new PlaneGeometry(500, 500),
   new MeshStandardMaterial({ color: 0xffffff, side: FrontSide })
 )
 
@@ -62,7 +55,20 @@ platform.rotation.x = (-90 * Math.PI) / 180
 platform.receiveShadow = true
 scene.add(platform)
 
-const gltfLoader = new GLTFLoader()
+const alertToast = new Toast("#alertToast")
+
+import("three/examples/jsm/loaders/GLTFLoader").then(({ GLTFLoader }) => {
+  new GLTFLoader().load(
+    cubeUrl,
+    objResolve,
+    () => {},
+    () => {
+      // onError
+      alertToast.show()
+    }
+  )
+})
+
 function objResolve(obj) {
   obj.scene.traverse((node) => {
     if (node.isMesh) {
@@ -78,18 +84,6 @@ function objResolve(obj) {
   scene.add(obj.scene)
   animate()
 }
-
-const alertToast = new Toast("#alertToast")
-
-gltfLoader.load(
-  cubeUrl,
-  objResolve,
-  () => {},
-  () => {
-    // onError
-    alertToast.show()
-  }
-)
 
 const ambientLight = new AmbientLight(0xffffff, 0.5)
 scene.add(ambientLight)
