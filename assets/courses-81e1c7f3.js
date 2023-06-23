@@ -1,0 +1,1 @@
+import"./main-a49a245c.js";console.info("courses page script loaded");const e=document.getElementById("course-search-form");e.onsubmit=c=>!1;const o=document.querySelector("body > header"),t=document.querySelector("body > main");t.style.paddingTop=o.getBoundingClientRect().height+"px";
