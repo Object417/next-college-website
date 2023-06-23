@@ -1,0 +1,1 @@
+import{_}from"./main-a49a245c.js";matchMedia("(min-width: 768px)").matches&&_(()=>import("./art-course-page-8463674a.js").then(t=>t.a9),["assets/art-course-page-8463674a.js","assets/main-a49a245c.js","assets/19c50e1d.css"]);
